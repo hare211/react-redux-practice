@@ -72,8 +72,8 @@ function Header() {
                                                role="button" data-toggle="dropdown" aria-haspopup="true"
                                                aria-expanded="false">부산 식당</a>
                                             <div className="dropdown-menu" aria-labelledby="yummyDropdown">
-                                                <a className="dropdown-item" href="index.html">식당 목록</a>
-                                                <a className="dropdown-item" href="archive.html">식당 검색</a>
+                                                <Link className="dropdown-item" to="/food/list">식당 목록</Link>
+                                                <Link className="dropdown-item" to="/food/find">식당 검색</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item dropdown">
