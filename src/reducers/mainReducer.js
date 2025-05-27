@@ -5,6 +5,7 @@ const mainState = {
 }
 
 export default (state = mainState, action) => {
+    console.log('reducer call', action);
     switch (action.type) {
         case FETCH_MAIN_DATA:
             return {

@@ -55,6 +55,7 @@ export const fetchMainData = () => async (dispatch) => {
             type: FETCH_MAIN_DATA,
             payload: res.data,
         });
+        console.log('res: ', res.data);
         /*
             dispatch(action) 을 호출하면 해당 action 객체가 reducer 로 전달되고,
             reducer 는 그 action 에 따라 새로운 state 를 반환함.
