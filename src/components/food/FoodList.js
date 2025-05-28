@@ -13,6 +13,44 @@ function FoodList() {
     }, [curPage]);
 
     const foodList = useSelector(state => state.foods.food_list);
+
+    // event handler
+    const prev = () => {
+        setCurPage(foodList.startPage - 1);
+    }
+
+    const next = () => {
+        setCurPage(foodList.endPage + 1);
+    }
+
+    const pageChange = (page) => {
+        setCurPage(page);
+    }
+
+    let row = [];
+    if (foodList.startPage > 1) {
+        row.push(<li className="page-item">
+                    <a className="page-link" onClick={prev}><i className="fa fa-angle-double-left" aria-hidden="true">
+                    </i> Prev </a>
+                </li>)
+    }
+
+    for (let i = foodList.startPage; i <= foodList.endPage; i++) {
+        if (i === foodList.curPage) {
+            row.push(<li className="page-item active"><a className="page-link" onClick={() => pageChange(i)}>{i}</a></li>)
+        } else {
+            row.push(<li className="page-item"><a className="page-link" onClick={() => pageChange(i)}>{i}</a></li>)
+        }
+
+    }
+
+    if (foodList.endPage < foodList.totalPage) {
+        row.push(<li className="page-item">
+                    <a className="page-link" onClick={next}>Next <i
+                    className="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </li>)
+    }
+
     return (
         <>
             <div className="breadcumb-area" style={{backgroundImage: "url(/img/bg-img/breadcumb.jpg)"}}>
@@ -34,25 +72,26 @@ function FoodList() {
                                 <div className="col-12 col-md-6 col-lg-4">
                                     <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                         <div className="post-thumb">
-                                            <img src={'http://www.menupan.com' + food.poster} alt="" />
+                                            <img src={'http://www.menupan.com' + food.poster} alt=""/>
                                         </div>
                                         <div className="post-content">
                                             <div className="post-meta d-flex">
                                                 <div className="post-author-date-area d-flex">
                                                     <div className="post-author">
-                                                        <a href="#">{ food.type }</a>
+                                                        <a href="#">{food.type}</a>
                                                     </div>
                                                     <div className="post-date">
-                                                        <a href="#">{ food.score }</a>
+                                                        <a href="#">{food.score}</a>
                                                     </div>
                                                 </div>
                                                 <div className="post-comment-share-area d-flex">
                                                     <div className="post-favourite">
-                                                        <a href="#"><i className="fa fa-heart-o" aria-hidden="true"></i>{ food.likecount }</a>
+                                                        <a href="#"><i className="fa fa-heart-o"
+                                                                       aria-hidden="true"></i>{food.likecount}</a>
                                                     </div>
                                                     <div className="post-comments">
                                                         <a href="#"><i className="fa fa-comment-o"
-                                                                       aria-hidden="true"></i>{ food.hit }</a>
+                                                                       aria-hidden="true"></i>{food.hit}</a>
                                                     </div>
                                                     <div className="post-share">
                                                         <a href="#"><i className="fa fa-share-alt"
@@ -61,13 +100,26 @@ function FoodList() {
                                                 </div>
                                             </div>
                                             <a href="#">
-                                                <h4 className="post-headline">{ food.name }</h4>
+                                                <h4 className="post-headline">{food.name}</h4>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             )
                         }
+                        {/* pagination */}
+                        <div className="col-12">
+                            <div className="pagination-area d-sm-flex mt-15">
+                                <nav aria-label="#">
+                                    <ul className="pagination">
+                                        { row }
+                                    </ul>
+                                </nav>
+                                <div className="page-status">
+                                    <p>Page { foodList.curPage } of { foodList.totalPage } results</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

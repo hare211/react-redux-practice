@@ -1143,6 +1143,10 @@ li {
     border-color: transparent;
 }
 
+.page-item:hover {
+    cursor: pointer;
+}
+
 .pagination-area .page-status p,
 .contact-info-area .single-contact-info p {
     margin-bottom: 0;
