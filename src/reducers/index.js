@@ -4,9 +4,11 @@ import { combineReducers } from 'redux'
 import mainReducers from './mainReducer'
 import foodReducers from './foodReducer'
 import youtubeReducer from "./youtubeReducer";
+import infoReducers from './infoReducer'
 
 export default combineReducers({
     mains: mainReducers,
     foods: foodReducers,
     youtubes: youtubeReducer,
+    infos: infoReducers,
 })

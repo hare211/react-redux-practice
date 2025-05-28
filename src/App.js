@@ -8,6 +8,7 @@ import FoodList from "./components/food/FoodList";
 import FoodFind from "./components/food/FoodFind";
 import FoodDetail from "./components/food/FoodDetail";
 import YoutubeFind from "./youtube/YoutubeFind";
+import InfoList from "./components/info/InfoList";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/food/find" element={<FoodFind/>} />
             <Route path="/food/detail/:fno" element={<FoodDetail/>} />
             <Route path="/youtube/find" element={<YoutubeFind/>} />
+            <Route path="/info/list/:cno" element={<InfoList/>} />
           </Routes>
         <Footer />
       </Router>
