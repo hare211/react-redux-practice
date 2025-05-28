@@ -72,7 +72,9 @@ function FoodList() {
                                 <div className="col-12 col-md-6 col-lg-4">
                                     <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
                                         <div className="post-thumb">
-                                            <img src={'http://www.menupan.com' + food.poster} alt=""/>
+                                            <Link to={ "/food/detail/" + food.fno }>
+                                                <img src={'http://www.menupan.com' + food.poster} alt=""/>
+                                            </Link>
                                         </div>
                                         <div className="post-content">
                                             <div className="post-meta d-flex">
@@ -99,9 +101,9 @@ function FoodList() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <Link to={ "/food/detail/" + food.fno }>
                                                 <h4 className="post-headline">{food.name}</h4>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

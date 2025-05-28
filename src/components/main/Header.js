@@ -88,7 +88,7 @@ function Header() {
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">부산 동영상</a>
+                                            <Link className="nav-link" to={"/youtube/find"}>부산 동영상</Link>
                                         </li>
                                         <li className="nav-item">
                                             <a className="nav-link" href="#">커뮤니티</a>
