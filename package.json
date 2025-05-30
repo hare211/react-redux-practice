@@ -24,7 +24,8 @@
     "request": "^2.88.2",
     "xml2js": "^0.6.2",
     "react-kakao-login": "^2.1.1",
-    "react-cookie": "^8.0.1"
+    "react-cookie": "^8.0.1",
+    "oracledb": "^6.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
